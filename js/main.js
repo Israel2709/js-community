@@ -14,9 +14,20 @@ document.getElementById('koder-name').addEventListener('keyup', event => {
   getKoderName(event)
 })
 
+/*Esta es la función que crea un elemento de lista con el texto que indiquemos como parámetro*/
+const createKoderItem = itemText => {
+  let koderItem = document.createElement('li')
+  let koderItemText = document.createTextNode(itemText)
+  koderItem.appendChild(koderItemText)
+  koderItem.classList.add('list-group-item')
+  return koderItem
+}
+
 /*esta es la función que se ejecuta cuando damos click al botón*/
 document.getElementById('add-koder').addEventListener('click', () => {
   console.log(koderName)
   kodersArray.push(koderName)
   console.log(kodersArray)
 })
+
+const printKodersList = () => {}
