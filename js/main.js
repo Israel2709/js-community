@@ -17,4 +17,6 @@ document.getElementById('koder-name').addEventListener('keyup', event => {
 /*esta es la función que se ejecuta cuando damos click al botón*/
 document.getElementById('add-koder').addEventListener('click', () => {
   console.log(koderName)
+  kodersArray.push(koderName)
+  console.log(kodersArray)
 })
