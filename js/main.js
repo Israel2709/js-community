@@ -23,11 +23,25 @@ const createKoderItem = itemText => {
   return koderItem
 }
 
+const addElementToList = listElement => {
+  document.getElementById('koders-list').appendChild(listElement)
+}
+
 /*esta es la función que se ejecuta cuando damos click al botón*/
 document.getElementById('add-koder').addEventListener('click', () => {
   console.log(koderName)
+  document.getElementById('koders-list').replaceChildren()
   kodersArray.push(koderName)
   console.log(kodersArray)
+  printNames(kodersArray)
 })
 
-const printKodersList = () => {}
+const printNames = arrayToPrint => {
+  arrayToPrint.forEach(nombre => {
+    //console.log(nombre)
+    let listElement = createKoderItem(nombre) //=><li>Lore</li>
+    addElementToList(listElement)
+  })
+}
+
+//const printKodersList = () => {}
